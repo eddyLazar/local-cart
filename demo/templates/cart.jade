@@ -1,0 +1,41 @@
+mixin cart_item(item)
+  li.mdl-list__item.mdl-list__item--three-line
+    span.mdl-list__item-primary-content
+      //- i.material-icons.mdl-list__item-avatar android
+      span.mdl-badge.mdl-badge--overlap(data-badge=item.count) #{item.data.title}
+      span.mdl-list__item-text-body #{item.unit_price} $
+      
+        
+    span.mdl-list__item-secondary-content
+      button.mdl-button.mdl-button--fab.mdl-button--mini-fab(
+        class="js-decreaseCount",
+        data-id=item.id,
+        data-count=item.count,
+      )
+        i.material-icons remove
+    span.mdl-list__item-secondary-content
+      button.mdl-button.mdl-button--fab.mdl-button--mini-fab(
+        class="js-increaseCount",
+        data-id=item.id,
+        data-count=item.count
+      )
+        i.material-icons add
+    span.mdl-list__item-secondary-content
+      button.mdl-button.mdl-js-button.mdl-button--fab.mdl-button--mini-fab.js-deleteFromCart.mdl-button--colored(
+        data-id=item.id
+      )
+        i.material-icons delete
+
+
+ul.mdl-list
+  for item in items
+    +cart_item(item)
+
+  li.mdl-list__item
+    span.mdl-list__item-primary-content
+      strong Total count
+    span.mdl-list__item-secondary-content #{totalCount}
+  li.mdl-list__item
+    span.mdl-list__item-primary-content
+      strong Total price
+    span.mdl-list__item-secondary-content #{totalPrice}
