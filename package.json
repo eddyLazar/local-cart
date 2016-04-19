@@ -1,12 +1,17 @@
 {
   "name": "local-cart",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
-  "main": "./app/main.js",
+  "main": "./dist/cart.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --progress --colors --devtool cheap-module-inline-source-map --hot --inline",
-    "build": "webpack --config webpack.config.dist.js -p"
+    "build": "webpack --config webpack.config.dist.js -p",
+    "prepublish": "npm run build"
+  },
+  "repository" :
+    { "type" : "git"
+    , "url" : "https://github.com/eddyLazar/local-cart"
   },
   "author": "",
   "license": "ISC",
