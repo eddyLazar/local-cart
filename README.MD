@@ -8,12 +8,12 @@ Simple api to store data for shopping carts, wishlists in browser localstorage
 * Cart object is mixed with node native [event emmiter](https://github.com/Gozala/events)
 
 ## Install
-```shell
+```js
 npm install stampit
 ```
 
 ## Instantiate
-```shell
+```js
 require('local-cart'); //add cart factory to window object
 const myCart = window.cartFactory({
   name: 'myAwesomeShopCart'
@@ -31,7 +31,7 @@ const myCart = window.cartFactory({
 * `count` - number of items in cart, if not specified is `1` 
 * `unit_price` - price of 1 item in cart
 * `data` - this is place to store your product model data, api doesn't use it, 
-```shell
+```js
 var myProductModel = {
     id: 1,
     price:1000,
@@ -48,7 +48,7 @@ var newCartItemOptions = {
 myCart.addItem(newCartItemOptions);
 ```
 Adding product with `id` that already exists in cart only updates `count` of an item 
-```shell
+```js
 myCart.addItem(newCartItemOptions);
 console.log(myCart.items); // [Object]
 console.log(myCart.getTotalCount); // 1
@@ -82,7 +82,7 @@ Total count of all items.
 Cart object is also an event emmiter. By now it `emits` only one event. See node event emmiter [api](https://nodejs.org/api/events.html#events_events)
 * `change` - fires when anything in cart is changed, after `addItem`, `deleteItem`, `updateItemCount` methods
 
-```shell
+```js
 myCart.on('change', functon () {
     console.log('items changed');
 });
