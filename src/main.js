@@ -1,9 +1,9 @@
-import cartFacrory from './cart/cart';
+import cartFactory from './cart/cart';
 
 
 let init = function (window) {
   if (window) {
-    window.cartFacrory = cartFacrory;  
+    window.cartFactory = cartFactory;  
   }
 }
 init(window);

@@ -75,6 +75,3 @@ riot.mount('catalog-list', {
     });
   }
 });
-
-
-console.log(cart.items);
