@@ -9,7 +9,7 @@ Simple api to store data for shopping carts, wishlists in browser localstorage
 
 ## Install
 ```js
-npm install stampit
+npm install local-cart
 ```
 
 ## Instantiate
